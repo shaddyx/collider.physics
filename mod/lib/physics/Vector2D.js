@@ -5,12 +5,13 @@ class Vector2D{
     }
     mul(value){
         if (value instanceof Vector2D){
-            return new Vector2D(
-                this.x * value.x,
-                this.y * value.y
-            )
+            this.x *= value.x;
+            this.y *= value.y;
+            return this;
         }
-        return new Vector2D(this.x * value, this.y * value);
+        this.x *= value;
+        this.y *= value;
+        return this;
     }
     /**
      * 
@@ -20,22 +21,38 @@ class Vector2D{
         return this.x * this.y + value.x * value.y;
     }
     add(value){
-        return new Vector2D(this.x + value.x, this.y + value.y)
+        this.x += value.x;
+        this.y += value.y;
+        return this;
     }
     sub(value){
-        return new Vector2D(this.x - value.x, this.y - value.y)
+        this.x -= value.x;
+        this.y -= value.y;
+        return this;
     }
     length(){
         return Math.sqrt(this.x*this.x + this.y * this.y)
     }
     normalize(){
         let l = this.length()
-        return new Vector2D(this.x / l, this.y / l);
+        this.x = this.x / l, 
+        this.y = this.y / l
+        return this;
     }
     rotate(angle){
         let x1 = this.x * cos(angle) - this.y * sin(angle);
         let y1 = this.y * cos(angle) + this.x * sin(angle);
-        return new Vector2D(x1, y1);
+        this.x = x1;
+        this.y = y1;
+        return this;
     }
+    getAngle(vector){
+        return Math.acos(this.scalarMul(vector) / (this.length()* vector.length()));
+    }
+
+    clone(){
+        return new Vector2D(this.x, this.y);
+    }
+
 
 }

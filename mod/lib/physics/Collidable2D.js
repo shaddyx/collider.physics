@@ -1,5 +1,5 @@
 // @depends(lib/physics/Area2D)
-class Collidable extends lib.physics.Area2D {
+class Collidable2D extends lib.physics.Area2D {
     constructor(...args){
         super(...args);
         this.mesh = new lib.physics.Mesh2D();
