@@ -49,7 +49,15 @@ class Vector2D{
     getAngle(vector){
         return Math.acos(this.scalarMul(vector) / (this.length()* vector.length()));
     }
-
+    /**
+     * 
+     * @param {Vector2D} vector 
+     */
+    distance(vector){
+        let distX = this.x - vector.x;
+        let distY = this.y - vector.y;
+        return Math.sqrt(distX * distX + distY * distY);
+    }
     clone(){
         return new Vector2D(this.x, this.y);
     }
