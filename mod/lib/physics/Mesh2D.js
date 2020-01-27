@@ -4,7 +4,8 @@ class Mesh2D{
     }
     /**
      * 
-     * @param {Mesh2D} mesh 
+     * @param {Mesh2D} mesh
+     * @returns {Vector2D|undefined}
      */
     intersects(mesh){
         for (let k in this.vectorArray){
