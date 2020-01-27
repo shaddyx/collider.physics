@@ -4,7 +4,7 @@ class A1 extends lib.physics.Area2D{
         super(...args);
         this.pos.x = 10;
         this.pos.y = 10;
-        this.size = new lib.physics.Vector2(20, 20);
+        this.size = new lib.physics.Vector2D(20, 20);
     }
     evo(){
     }

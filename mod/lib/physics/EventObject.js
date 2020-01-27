@@ -1,6 +1,5 @@
 class EventObject {
     constructor(...args){
-        super(...args);
         this.eventListeners = {};
     }
     on(name, event){
