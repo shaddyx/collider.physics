@@ -26,7 +26,7 @@ class MathUtil{
             var dx = p1.x + ta * (p2.x - p1.x);
             var dy = p1.y + ta * (p2.y - p1.y);
     
-            return new Vector2D(dx, dy);
+            return new lib.physics.Vector2D(dx, dy);
         }
     
         return undefined;
