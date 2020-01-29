@@ -9,13 +9,10 @@ class A1 extends lib.physics.Collidable2D{
         this.pos.add(this.speed.clone().mul(dt));
     }
     draw(){
-        ctx.beginPath();
         lineWidth(3);
-        background("#000")
+        //background("#000000")
+        stroke('#ff0000');
         circle(this.pos.x + this.size.x / 2, this.pos.y + this.size.y / 2, this.size.x / 2);
         circle(this.pos.x + this.size.x / 2, this.pos.y + this.size.y / 2, 1);
-        stroke('#ff0000');
-        ctx.closePath();
     }
-
 }
