@@ -1,7 +1,7 @@
 class Vector2D{
     constructor(x, y){
-        this.x = x;
-        this.y = y;
+        this.x = x || 0;
+        this.y = y || 0;
     }
     mul(value){
         if (value instanceof Vector2D){
@@ -19,6 +19,10 @@ class Vector2D{
      */
     scalarMul(value){
         return this.x * this.y + value.x * value.y;
+    }
+    eq(vector){
+        this.x = vector.x;
+        this.y = vector.y;
     }
     add(value){
         this.x += value.x;

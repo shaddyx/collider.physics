@@ -1,6 +1,7 @@
 class Mesh2D{
     constructor(){
         this.vectorArray = [];
+        this.center = new lib.physics.Vector2D();
     }
     /**
      * 
