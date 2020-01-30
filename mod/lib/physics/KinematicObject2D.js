@@ -5,9 +5,9 @@ class KinematicObject2D extends lib.physics.Area2D {
         this.speed = args.speed || new lib.physics.Vector2D();
     }
     evo(dt){
-
+        super.evo();
     }
-    draw(dt){
+    draw(){
 
     }
 }

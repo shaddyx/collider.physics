@@ -1,11 +1,28 @@
 class Mesh2D{
-    constructor(){
+    constructor(vectors){
         this.vectorArray = [];
+        if (vectors){
+            for (let k in vectors){
+                let vect = vectors[k];
+                if (!(vect instanceof lib.physics.Vector2D)){
+                    vect = new lib.physics.Vector2D(vect.x, vect.y)
+                }
+                this.vectorArray.push(vect);
+            }
+        }
         this.center = new lib.physics.Vector2D();
+        this.pos = new lib.physics.Vector2D();
+    }
+    moveTo(vector){
+        for (let k in this.vectorArray){
+            this.vectorArray[k].sub(this.pos);
+            this.vectorArray[k].add(vector);
+        }
+        this.pos.eq(vector);
     }
     /**
      * 
-     * @param {Mesh2D} mesh
+     * @param {Mesh2mesh
      * @returns {Vector2D|undefined}
      */
     intersects(mesh){
