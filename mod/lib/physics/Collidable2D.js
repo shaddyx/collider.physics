@@ -24,7 +24,9 @@ class Collidable2D extends lib.physics.KinematicObject2D {
         if (element == this || !(element instanceof lib.physics.KinematicObject2D)){
             return;
         }
-        if (this.mesh.intersects(element.mesh)){
+        let section = this.mesh.intersects(element.mesh);
+        if (section){
+            debugger;
             this.pos = this.prev;
             this.speed.mul(-1);
         }

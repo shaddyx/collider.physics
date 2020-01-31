@@ -29,8 +29,9 @@ class Mesh2D{
         for (let i=0; i < mesh.vectorArray.length; i++){
             let a = mesh.vectorArray[i];
             let b = i < (mesh.vectorArray.length - 1) ? mesh.vectorArray[i + 1]: mesh.vectorArray[0];
-            if (this.intersectsSection(a, b)){
-                return true;
+            let section = this.intersectsSection(a, b);
+            if (section){
+                return section;
             }
         }
     }
