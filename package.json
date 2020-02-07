@@ -6,6 +6,7 @@
         "start": "node ./node_modules/collider.jam/jam.js"
     },
     "dependencies": {
+        "@types/jquery": "^3.3.32",
         "collider-boot.mix": "git+https://github.com/invider/collider-boot.mix.git",
         "collider-debug.mix": "git+https://github.com/invider/collider-debug.mix.git",
         "collider-ext.mix": "git+https://github.com/invider/collider-ext.mix.git",

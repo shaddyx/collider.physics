@@ -25,10 +25,20 @@ class Collidable2D extends lib.physics.KinematicObject2D {
         if (element == this || !(element instanceof lib.physics.KinematicObject2D)){
             return;
         }
-        let section = this.mesh.intersects(element.mesh);
-        if (section){
+        let antiVector = this.mesh.intersects(element.mesh);
+        if (antiVector){
             this.pos = this.prev;
-            this.speed.mul(-1);
+            debugger;
+            this.speed.mul(antiVector.normalize());
+            //this.collision(antiVector);
+        }
+    }
+    /** @type {Vector2D} */
+    collision(antiVector){
+        if (antiVector.x < antiVector.y){
+            this.pos.add(new lib.physics.Vector2D(0, this.speed.y));
+        } else {
+            this.pos.add(new lib.physics.Vector2D(this.speed.x, 0));
         }
     }
 }

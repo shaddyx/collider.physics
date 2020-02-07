@@ -8,6 +8,5 @@ class KinematicObject2D extends lib.physics.Area2D {
         super.evo();
     }
     draw(){
-
     }
 }

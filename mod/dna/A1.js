@@ -2,6 +2,7 @@
 class A1 extends lib.physics.Collidable2D{
     constructor(...args){
         super(...args);
+        /** @type {Vector2D} */
         this.size = new lib.physics.Vector2D(20, 20);
         this.mesh = new lib.physics.SquareMesh2D({
             from: new lib.physics.Vector2D(),
