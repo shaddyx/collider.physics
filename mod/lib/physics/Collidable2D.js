@@ -5,9 +5,10 @@ class Collidable2D extends lib.physics.KinematicObject2D {
         /** @type {Mesh2D} */
         this.mesh = new lib.physics.Mesh2D();
         this.collided = [];
-        this.prev = new lib.physics.Vector2D();
+        this.prev = undefined;
     }
     evo(dt){
+        this.prev = this.prev || this.pos.clone();
         super.evo(dt);
     }
     draw(){
@@ -26,7 +27,6 @@ class Collidable2D extends lib.physics.KinematicObject2D {
         }
         let section = this.mesh.intersects(element.mesh);
         if (section){
-            debugger;
             this.pos = this.prev;
             this.speed.mul(-1);
         }
