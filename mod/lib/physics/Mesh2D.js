@@ -50,4 +50,11 @@ class Mesh2D{
             }
         }
     }
+    /**
+     * Distance to another mesh
+     * @param {Mesh2D} otherMesh
+     */
+    distance(otherMesh){
+        throw new Error("Not implemented yet");
+    }
 }

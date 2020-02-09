@@ -68,4 +68,3 @@ class Vector2D{
 
 
 }
-module.exports = Vector2D;

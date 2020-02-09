@@ -31,4 +31,31 @@ class MathUtil{
 
         return undefined;
     }
+
+    static min(...args){
+        let minValue = Infinity;
+        let minVector = undefined;
+        for (let k in args){
+            const vect = args[k];
+            const len = vect.length();
+            if (len < minValue){
+                minValue = len;
+                minVector = vect;
+            }
+        }
+        return minVector;
+    }
+    static max(...args){
+        let maxValue = Infinity;
+        let maxVector = undefined;
+        for (let k in args){
+            const vect = args[k];
+            const len = vect.length();
+            if (len > maxValue){
+                maxValue = len;
+                maxVector = vect;
+            }
+        }
+        return maxVector;
+    }
 }

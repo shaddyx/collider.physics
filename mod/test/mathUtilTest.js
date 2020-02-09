@@ -16,4 +16,13 @@ module.exports = function() {
         new Vect(12, 3)
     )
     lib.Asserts.equals(res);
+
+    res = lib.physics.MathUtil.min(
+        new Vect(1, 1),
+        new Vect(5, 9),
+        new Vect(7, 8),
+        new Vect(12, 3)
+    );
+    lib.Asserts.equals(1, res.x);
+    lib.Asserts.equals(1, res.y);
 }

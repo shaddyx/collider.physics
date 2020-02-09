@@ -28,7 +28,6 @@ class Collidable2D extends lib.physics.KinematicObject2D {
         let antiVector = this.mesh.intersects(element.mesh);
         if (antiVector){
             this.pos = this.prev;
-            debugger;
             this.speed.mul(antiVector.normalize());
             //this.collision(antiVector);
         }
