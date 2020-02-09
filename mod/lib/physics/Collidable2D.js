@@ -13,13 +13,18 @@ class Collidable2D extends lib.physics.Area2D {
     draw(){
         super.draw();
     }
+    moveTo(to){
+        this.pos = to;
+        this.mesh.moveTo(to);
+    }
     collideWith(element, dt){
         if (element == this || !(element instanceof lib.physics.KinematicObject2D)){
             return;
         }
         let antiVector = this.mesh.intersects(element.mesh);
         if (antiVector){
-            this.pos = this.prev;
+            this.moveTo(this.prev);
+            let len = this.mesh.distance(element.mesh);
             this.speed.mul(antiVector.normalize());
             //this.collision(antiVector);
         }

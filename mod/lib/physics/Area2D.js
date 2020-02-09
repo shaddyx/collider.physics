@@ -9,6 +9,9 @@ class Area2D extends lib.physics.EventObject {
             this.pos.y = args.y;
         }
     }
+    moveTo(to){
+        this.pos = to;
+    }
     evo(dt){
         
     }

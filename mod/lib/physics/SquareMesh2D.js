@@ -41,10 +41,10 @@ class SquareMesh2D extends lib.physics.Mesh2D{
      */
     distance(otherMesh){
         return lib.physics.MathUtil.min(
-            this.from.distance(otherMesh.from),
-            this.from.distance(otherMesh.to),
-            this.to.distance(otherMesh.from),
-            this.to.distance(otherMesh.to)
+            this.from.clone().sub(otherMesh.from),
+            this.from.clone().sub(otherMesh.to),
+            this.to.clone().sub(otherMesh.from),
+            this.to.clone().sub(otherMesh.to)
         )
     }
     
