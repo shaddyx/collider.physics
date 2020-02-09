@@ -1,5 +1,5 @@
-// @depends(lib/physics/Collidable2D)
-class A1 extends lib.physics.Collidable2D{
+// @depends(lib/physics/KinematicObject2D)
+class A1 extends lib.physics.KinematicObject2D{
     constructor(...args){
         super(...args);
         /** @type {Vector2D} */

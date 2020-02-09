@@ -1,5 +1,5 @@
-// @depends(lib/physics/KinematicObject2D)
-class Collidable2D extends lib.physics.KinematicObject2D {
+// @depends(lib/physics/Area2D)
+class Collidable2D extends lib.physics.Area2D {
     constructor(...args){
         super(...args);
         /** @type {Mesh2D} */
@@ -8,18 +8,10 @@ class Collidable2D extends lib.physics.KinematicObject2D {
         this.prev = undefined;
     }
     evo(dt){
-        this.prev = this.prev || this.pos.clone();
         super.evo(dt);
     }
     draw(){
         super.draw();
-    }
-    moveAndCollide(dt){
-        this.mesh.moveTo(this.pos);
-        this.__._ls.forEach(element => this.collideWith(element, dt));
-        this.prev = this.pos.clone();
-        this.pos.add(this.speed.clone().mul(dt));
-        this.mesh.moveTo(this.pos);
     }
     collideWith(element, dt){
         if (element == this || !(element instanceof lib.physics.KinematicObject2D)){
@@ -34,10 +26,6 @@ class Collidable2D extends lib.physics.KinematicObject2D {
     }
     /** @type {Vector2D} */
     collision(antiVector){
-        if (antiVector.x < antiVector.y){
-            this.pos.add(new lib.physics.Vector2D(0, this.speed.y));
-        } else {
-            this.pos.add(new lib.physics.Vector2D(this.speed.x, 0));
-        }
+       
     }
 }
